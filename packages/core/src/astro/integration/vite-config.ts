@@ -327,8 +327,8 @@ export function createViteConfig(
 			// When using source, don't pre-bundle JS — let Vite transform on the fly for HMR.
 			// When using dist, pre-bundle to avoid re-optimization on first hydration.
 			include: useSource
-				? ["@astrojs/react/client.js"]
-				: ["@emdash-cms/admin", "@astrojs/react/client.js"],
+				? ["@astrojs/react/client.js", "@cloudflare/kumo"]
+				: ["@emdash-cms/admin", "@astrojs/react/client.js", "@cloudflare/kumo"],
 			exclude: cloudflare ? ["virtual:emdash"] : [...NODE_NATIVE_EXTERNALS, "virtual:emdash"],
 		},
 	};
